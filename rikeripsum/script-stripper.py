@@ -1,8 +1,24 @@
 #!/usr/bin/env python
 import re
+import os, os.path
+
+
 
 def main():
-    f = open('scripts/seasonone/11001001.htm')
+    lines = []
+    for season_dir in os.listdir('scripts'): 
+        if season_dir == '.DS_Store': 
+            continue
+        for script_file in os.listdir('scripts/' + season_dir): 
+            curr_lines = extract_riker_lines('scripts/%s/%s' % (season_dir, script_file))
+            lines.extend(curr_lines)
+    for line in lines: 
+        print line
+
+
+def extract_riker_lines(filename): 
+    lines = []
+    f = open(filename)
     body = f.read()
     body = body.replace('\n', '').replace('\r', '').replace('<br>', '')
     matches = re.findall(r'<p> RIKER[ ]+(.*?)</p>', body, re.MULTILINE)
@@ -10,8 +26,8 @@ def main():
         line = ' '.join(match.split())
         line = re.sub(r'\(.*?\)', '', line).strip()
         line = line.replace('&quot;', '"')
-        #line = re.sub(r'\s+', ' ', match)
-        print "MATCH: %s" % line
+        lines.append(line)
+    return lines 
 
 
 
