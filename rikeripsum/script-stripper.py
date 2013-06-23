@@ -6,6 +6,13 @@ import pickle
 character = 'RIKER'
 num_words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',]
 
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+
+
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
+
+
 def main():
     lines = []
     for season_num in range(1, 7):
@@ -15,7 +22,7 @@ def main():
             lines.extend(curr_lines)
     lines.sort()
 
-    pickle_file = open('%s.pickle' % character.lower(), 'wb')
+    pickle_file = get_data('%s.pickle' % character.lower()), 'wb')
     pickle.dump(lines, pickle_file)
     pickle_file.close()
 

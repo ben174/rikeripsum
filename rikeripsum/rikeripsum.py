@@ -2,8 +2,14 @@
 
 import pickle
 import random
+import os
 
 lines = None
+
+
+_ROOT = os.path.abspath(os.path.dirname(__file__))
+def get_data(path):
+    return os.path.join(_ROOT, 'data', path)
 
 
 def main(): 
@@ -23,7 +29,7 @@ def generate_paragraph(sentence_count=None):
     
 
 def load_pickle(): 
-    f = open('riker.pickle')
+    f = open(get_data('riker.pickle'))
     return pickle.load(f)
 
 

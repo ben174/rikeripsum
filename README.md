@@ -13,3 +13,8 @@ I found a site, http://antoa.com/tng/, which contains the scripts of every episo
 - Option to specify the number of words you'd like sentences to have. 
 - Ability to select which character you'd like to pull lines from (this is started). 
 - Perhaps a way to construct truly random sentences using a sampling of words from the dialog.
+
+##Usage
+
+    from rikeripsum import rikeripsum
+    rikeripsum.generate_paragraph()
