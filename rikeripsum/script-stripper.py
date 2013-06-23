@@ -22,7 +22,7 @@ def main():
             lines.extend(curr_lines)
     lines.sort()
 
-    pickle_file = get_data('%s.pickle' % character.lower()), 'wb')
+    pickle_file = open(get_data('%s.pickle' % character.lower()), 'wb')
     pickle.dump(lines, pickle_file)
     pickle_file.close()
 
