@@ -1,34 +1,44 @@
 #!/usr/bin/env python
 import re
 import os, os.path
+import pickle
 
-
+character = 'RIKER'
+num_words = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',]
 
 def main():
     lines = []
-    for season_dir in os.listdir('scripts'): 
-        if season_dir == '.DS_Store': 
-            continue
-        for script_file in os.listdir('scripts/' + season_dir): 
-            curr_lines = extract_riker_lines('scripts/%s/%s' % (season_dir, script_file))
+    for season_num in range(1, 7):
+        season_dir = 'scripts/season%s' % num_words[season_num]
+        for script_file in os.listdir(season_dir): 
+            curr_lines = extract_riker_lines(season_num, script_file)
             lines.extend(curr_lines)
+    lines.sort()
+
+    pickle_file = open('%s.pickle' % character.lower(), 'wb')
+    pickle.dump(lines, pickle_file)
+    pickle_file.close()
+
     for line in lines: 
         print line
 
 
-def extract_riker_lines(filename): 
+def extract_riker_lines(season_num, filename): 
     lines = []
-    f = open(filename)
+    f = open('scripts/season%s/%s' % (num_words[season_num], filename))
     body = f.read()
-    body = body.replace('\n', '').replace('\r', '').replace('<br>', '')
-    matches = re.findall(r'<p> RIKER[ ]+(.*?)</p>', body, re.MULTILINE)
+    body = body.replace('\n', '').replace('\r', '')
+    matches = re.findall(r'<p> ' + character + r'<br>[ ]+(.*?)</p>', body)
     for match in matches: 
-        line = ' '.join(match.split())
-        line = re.sub(r'\(.*?\)', '', line).strip()
-        line = line.replace('&quot;', '"')
+        line = {}
+        line['text'] = ' '.join(match.split())
+        line['text'] = re.sub(r'\(.*?\)', '', line['text'])
+        line['text'] = line['text'].replace('<br>', '').strip()
+        line['text'] = line['text'].replace('&quot;', '"')
+        line['episode'] = filename.replace('.htm', '')
+        line['word_count'] = len(line['text'].split())
         lines.append(line)
     return lines 
-
 
 
 if __name__ == '__main__': 
