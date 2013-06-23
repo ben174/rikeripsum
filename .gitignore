@@ -7,3 +7,5 @@
 dist/RikerIpsum-1.0.tar.gz
 
 MANIFEST
+
+*.pyc
