@@ -26,7 +26,7 @@ def generate_paragraph(sentence_count=None):
         sentence_count = random.choice(range(2, 10))
     paragraph = ''
     for i in range(sentence_count): 
-        paragraph += ' ' + random.choice(lines)['text']
+        paragraph += ' ' + generate_sentence()
     return paragraph.strip()
 
 
