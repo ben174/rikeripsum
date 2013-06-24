@@ -1,0 +1,12 @@
+
+*.un~
+
+MANIFEST
+
+*.gz
+
+*.pyc
+
+rikeripsum/scripts/.DS_Store
+
+*.swp
