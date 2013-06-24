@@ -10,3 +10,5 @@ MANIFEST
 rikeripsum/scripts/.DS_Store
 
 *.swp
+
+*.swo

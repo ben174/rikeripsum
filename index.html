@@ -9,6 +9,16 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>Rikeripsum</title>
+    <script src="js/jquery.min.js" ></script>
+    <script language="javascript">
+      function getRiker() { 
+        jQuery.getJSON('http://www.bugben.com/cgi-bin/riker.py?callback=?', function(data) {
+          jQuery(".sample").show();
+          jQuery("#riker").html(data.text);
+        });
+        return false;
+      }
+    </script>
   </head>
 
   <body>
@@ -41,7 +51,11 @@
 
 <p>The <em>entire catalog</em> of dialog from every episode of Star Trek: The Next Generation is included, which allows for endless possibilites.</p>
 
-<p>Installation is easy:</p>
+<a href="#" class="classname" onclick="return getRiker();">Try a Demo</a>
+<div class="sample"><code id="riker"></code></div>
+
+
+<h3>Installation is easy:</h3>
 
 <pre><code>$ pip install rikeripsum
 </code></pre>

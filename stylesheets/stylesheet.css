@@ -425,3 +425,43 @@ Small Device Styles
   }
 
 }
+  .sample { 
+  width: 100%;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,.1);
+  overflow: auto;
+  width: 100%;
+  color: #222;
+  background-color: rgb(201, 220, 248);
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+  font-size: 14px;
+  display: none;
+}
+#riker { 
+ background-color: rgb(201, 220, 248); 
+ box-shadow: none;
+}
+.classname {
+  -moz-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #bee2f9;
+  box-shadow:inset 0px 1px 0px 0px #bee2f9;
+  background-color:#63b8ee;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #3866a3;
+  display:inline-block;
+  color:#14396a;
+  font-family:arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #7cacde;
+  margin-bottom: 10px; 
+}.classname:hover {
+  background-color:#468ccf;
+}.classname:active {
+  position:relative;
+  top:1px;
+}
