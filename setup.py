@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='RikerIpsum',
-    version='1.1',
+    version='1.2',
     packages=['rikeripsum',],
     license='Creative Commons Attribution-Noncommercial-Share Alike license',
     long_description='''Generates text - like lorem ipsum - but uses real English. Taken from random samplings of dialog spoken by Commander William Riker in Star Trek: The Next Generation.
@@ -18,4 +18,9 @@ setup(
         '': ['*.pickle', 'data/riker.pickle' ],
     }, 
     include_package_data = True, 
+    entry_points={
+        'console_scripts': 
+        ['riker=rikeripsum:main'],
+    }
+
 )
