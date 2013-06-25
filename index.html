@@ -15,6 +15,9 @@
         jQuery.getJSON('http://www.bugben.com/cgi-bin/riker.py?callback=?', function(data) {
           jQuery("#riker").html(data.text);
           jQuery(".sample").slideDown();
+          if (jQuery("#riker-image").attr('src') != 'images/riker.gif') { 
+            jQuery("#riker-image").attr('src', "images/riker.gif")
+          }
         });
         return false;
       }
@@ -37,6 +40,8 @@
               <a class="tar_download_link" href="https://github.com/ben174/rikeripsum/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
+        <!-- for preloading -->
+        <img src="images/riker.gif" style="display: none;">
     </div>
 
     <!-- MAIN CONTENT -->
@@ -46,7 +51,7 @@
 <a name="rikeripsum---a-package-for-generating-random-text-like-lorem-ipsum" class="anchor" href="#rikeripsum---a-package-for-generating-random-text-like-lorem-ipsum"><span class="octicon octicon-link"></span></a>RikerIpsum - A package for generating random text (like lorem ipsum)</h3>
         <h5>Written by <a href="http://www.bugben.com">Ben Friedland</a></h5>
 
-          <img src="images/riker.jpg" style="float: right; border: solid 2px #CCC; width: 200px; margin-top: 0px; margin-left: 10px;">
+          <img src="images/riker.jpg" id="riker-image">
           <p>Generates text - like lorem ipsum - but uses real English. Taken from random samplings of dialog spoken by Commander William Riker in Star Trek: The Next Generation.</p>
 <p>Useful for provisioning sample data to test a DB, or creating filler text for a design. </p>
 

@@ -465,3 +465,10 @@ Small Device Styles
   position:relative;
   top:1px;
 }
+#riker-image { 
+  float: right;
+  border: solid 2px #CCC;
+  width: 200px;
+  margin-top: 0px;
+  margin-left: 10px;
+}

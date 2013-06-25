@@ -12,3 +12,5 @@ rikeripsum/scripts/.DS_Store
 *.swp
 
 *.swo
+
+.DS_Store
