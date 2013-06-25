@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Rikeripsum</title>
+    <title>RikerIpsum - Lorem Ipsum: The Next Generation</title>
     <script src="js/jquery.min.js" ></script>
     <script language="javascript">
       function getRiker() { 
         jQuery.getJSON('http://www.bugben.com/cgi-bin/riker.py?callback=?', function(data) {
-          jQuery(".sample").show();
           jQuery("#riker").html(data.text);
+          jQuery(".sample").slideDown();
         });
         return false;
       }

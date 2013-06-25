@@ -460,7 +460,7 @@ Small Device Styles
   text-shadow:1px 1px 0px #7cacde;
   margin-bottom: 10px; 
 }.classname:hover {
-  background-color:#468ccf;
+  /* background-color:#468ccf; */
 }.classname:active {
   position:relative;
   top:1px;
