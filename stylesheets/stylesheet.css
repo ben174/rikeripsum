@@ -53,7 +53,7 @@ Theme Styles
 
 body {
   box-sizing: border-box;
-  color:#373737;
+  color:rgb(34, 30, 66);
   background: #212121;
   font-size: 16px;
   font-family: 'Myriad Pro', Calibri, Helvetica, Arial, sans-serif;
@@ -231,7 +231,7 @@ hr {
 }
 
 table {
-  border: 1px solid #373737;
+  border: 1px solid rgb(34, 30, 66);
   margin-bottom: 20px;
   text-align: left;
  }
@@ -239,13 +239,13 @@ table {
 th {
   font-family: 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   padding: 10px;
-  background: #373737;
+  background: rgb(34, 30, 66);
   color: #fff;
  }
 
 td {
   padding: 10px;
-  border: 1px solid #373737;
+  border: 1px solid rgb(34, 30, 66);
  }
 
 form {
@@ -290,11 +290,11 @@ Full-Width Styles
 
 #header_wrap {
   background: #212121;
-  background: -moz-linear-gradient(top, #373737, #212121);
-  background: -webkit-linear-gradient(top, #373737, #212121);
-  background: -ms-linear-gradient(top, #373737, #212121);
-  background: -o-linear-gradient(top, #373737, #212121);
-  background: linear-gradient(top, #373737, #212121);
+  background: -moz-linear-gradient(top, rgb(34, 30, 66), #212121);
+  background: -webkit-linear-gradient(top, rgb(34, 30, 66), #212121);
+  background: -ms-linear-gradient(top, rgb(34, 30, 66), #212121);
+  background: -o-linear-gradient(top, rgb(34, 30, 66), #212121);
+  background: linear-gradient(top, rgb(34, 30, 66), #212121);
 }
 
 #header_wrap .inner {
@@ -315,6 +315,8 @@ Full-Width Styles
   font-weight: 300;
   background: none;
   text-shadow: #111 0px 0px 10px;
+  margin-top: 0px; 
+  padding-bottom: 0px;
 }
 
 #downloads {
@@ -471,4 +473,7 @@ Small Device Styles
   width: 200px;
   margin-top: 0px;
   margin-left: 10px;
+}
+h3 { 
+  margin-top: 20px; 
 }
