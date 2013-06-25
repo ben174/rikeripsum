@@ -1,5 +1,5 @@
-rikeripsum
-==========
+#Lorem Ipsum: The Next Generation
+See it in action [here](http://ben174.github.io/rikeripsum/). 
 
 Generates text - like lorem ipsum - but uses real English. Taken from random samplings of dialog spoken by Commander William Riker in Star Trek: The Next Generation.
 
@@ -13,6 +13,9 @@ I found a site, http://antoa.com/tng/, which contains the scripts of every episo
 - Ability to generate random words. 
 - Ability to select which character you'd like to pull lines from (this is started). 
 - Perhaps a way to construct truly random sentences using a sampling of words from the dialog.
+
+###Try it out
+#####Live sample available here: http://ben174.github.io/rikeripsum/
 
 ##Usage
 
