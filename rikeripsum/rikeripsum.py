@@ -3,6 +3,7 @@
 import pickle
 import random
 import os
+import argparse
 
 lines = None
 
@@ -10,10 +11,6 @@ _ROOT = os.path.abspath(os.path.dirname(__file__))
 
 def get_data(path):
     return os.path.join(_ROOT, 'data', path)
-
-
-def main(): 
-    print generate_paragraph()
 
 
 def generate_paragraph(sentence_count=None): 
@@ -74,6 +71,16 @@ class ImpossibleSentenceError(Exception):
     """
     def __init__(self, message, Errors):
         Exception.__init__(self, message)
+
+
+def main():
+
+    parser = argparse.ArgumentParser(description='Print Riker quotes.')
+    parser.add_argument('-c', '--count', dest='count', type=int,
+                       help='minimum number of words in the sentence')
+
+    args = parser.parse_args()
+    print generate_sentence(args.count)
 
 
 if __name__ == '__main__': 
