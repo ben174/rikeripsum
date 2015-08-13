@@ -1,5 +1,8 @@
 #Lorem Ipsum: The Next Generation
-See it in action [here](http://ben174.github.io/rikeripsum/). 
+
+![riker](https://cloud.githubusercontent.com/assets/1502483/9260573/62ab0e12-41bd-11e5-887f-664af664f421.gif)
+
+Try it out [here](http://ben174.github.io/rikeripsum/). 
 
 Generates text - like lorem ipsum - but uses real English. Taken from random samplings of dialog spoken by Commander William Riker in Star Trek: The Next Generation.
 
