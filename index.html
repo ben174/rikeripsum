@@ -7,16 +7,17 @@
     <meta name="description" content="Rikeripsum : Generates text - like lorem ipsum - but uses real English. Taken from random samplings of dialog spoken by Commander William Riker in Star Trek: The Next Generation." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <title>RikerIpsum - Lorem Ipsum: The Next Generation</title>
     <script src="js/jquery.min.js" ></script>
     <script language="javascript">
       function getRiker() { 
-        jQuery.getJSON('http://www.bugben.com/cgi-bin/riker.py?callback=?', function(data) {
-          jQuery("#riker").html(data.text);
-          jQuery(".sample").slideDown();
-          if (jQuery("#riker-image").attr('src') != 'images/riker.gif') { 
-            jQuery("#riker-image").attr('src', "images/riker.gif")
+        $.get('http://www.bugben.com/riker', function(data) {
+          $("#riker").html(data);
+          $(".sample").slideDown();
+          if ($("#riker-image").attr('src') != 'images/riker.gif') { 
+            $("#riker-image").attr('src', "images/riker.gif")
           }
         });
         return false;
