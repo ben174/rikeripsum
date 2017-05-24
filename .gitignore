@@ -11,3 +11,7 @@ MANIFEST
 *.pyc
 
 dist/RikerIpsum-1.1.tar.gz
+
+/lib
+/data
+/build
