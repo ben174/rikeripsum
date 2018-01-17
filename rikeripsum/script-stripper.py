@@ -17,7 +17,7 @@ def main():
     lines = []
     for season_num in range(1, 7):
         season_dir = 'scripts/season%s' % num_words[season_num]
-        for script_file in os.listdir(season_dir): 
+        for script_file in os.listdir(season_dir):
             curr_lines = extract_riker_lines(season_num, script_file)
             lines.extend(curr_lines)
     lines.sort()
@@ -26,17 +26,17 @@ def main():
     pickle.dump(lines, pickle_file)
     pickle_file.close()
 
-    for line in lines: 
-        print line
+    for line in lines:
+        print(line)
 
 
-def extract_riker_lines(season_num, filename): 
+def extract_riker_lines(season_num, filename):
     lines = []
     f = open('scripts/season%s/%s' % (num_words[season_num], filename))
     body = f.read()
     body = body.replace('\n', '').replace('\r', '')
     matches = re.findall(r'<p> ' + character + r'<br>[ ]+(.*?)</p>', body)
-    for match in matches: 
+    for match in matches:
         line = {}
         line['text'] = ' '.join(match.split())
         line['text'] = re.sub(r'\(.*?\)', '', line['text'])
@@ -45,8 +45,8 @@ def extract_riker_lines(season_num, filename):
         line['episode'] = filename.replace('.htm', '')
         line['word_count'] = len(line['text'].split())
         lines.append(line)
-    return lines 
+    return lines
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     main()
